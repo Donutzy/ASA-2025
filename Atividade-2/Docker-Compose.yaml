@@ -5,6 +5,9 @@ services:
     ports:
       - "53:53/udp"
       - "53:53/tcp"
+    volumes:
+      - ./dns/named.conf.local:/etc/bind/named.conf.local
+      - ./dns/db.asa.br:/etc/bind/db.asa.br
     networks:
       rede:
         ipv4_address: 172.20.0.2

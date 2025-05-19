@@ -1,12 +1,16 @@
-$TTL 604800
-@   IN  SOA asa.br. root.asa.br. (
-        2025051801 ; Serial
-        3600       ; Refresh
-        1800       ; Retry
-        604800     ; Expire
-        86400 )    ; Minimum TTL
-        
-@     IN  NS   asa.br.
-web1  IN  A    172.20.0.11
-web2  IN  A    172.20.0.12
-proxy IN  A    172.20.0.10
+;
+; BIND data file for asa.br zone
+;
+$TTL	604800
+@	IN	SOA	ns.asa.br. root.asa.br. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@		IN	NS	ns.
+@		IN	A	172.20.0.2
+www		IN	A	172.20.0.2
+portal	IN	CNAME	www
+
