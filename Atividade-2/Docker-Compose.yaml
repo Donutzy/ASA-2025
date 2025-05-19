@@ -21,6 +21,20 @@ services:
       rede:
         ipv4_address: 172.20.0.10
 
+  web1:
+    build: ./web1
+    container_name: web1
+    networks:
+      rede:
+        ipv4_address: 172.20.0.11
+
+  web2:
+    build: ./web2
+    container_name: web2
+    networks:
+      rede:
+        ipv4_address: 172.20.0.12
+        
 networks:
   rede:
     driver: bridge

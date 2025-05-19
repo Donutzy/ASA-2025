@@ -13,3 +13,5 @@ $TTL	604800
 @		IN	A	172.20.0.2
 www		IN	A	172.20.0.10
 portal	IN	CNAME	www
+web1    IN      A       172.20.0.11
+web2    IN      A       172.20.0.12
