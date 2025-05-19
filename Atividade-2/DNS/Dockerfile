@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -6,6 +6,6 @@ RUN apt-get update && \
     apt-get install -y bind9 dnsutils &&
 
 COPY named.conf /etc/bind/named.conf.local
-COPY db.asa.local /etc/bind/zones/db.asa.br
+COPY db.asa.br /etc/bind/zones/db.asa.br
 
-CMD ["named", "-g", "-c", "/etc/bind/named.conf"]
+CMD ["/usr/sbin/named", "-g", "-c", "/etc/bind/named.conf", "-u", "bind"]
