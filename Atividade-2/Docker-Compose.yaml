@@ -1,0 +1,17 @@
+services:
+  dns:
+    build: ./dns
+    container_name: dns-server
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+    networks:
+      rede:
+        ipv4_address: 172.20.0.2
+
+networks:
+  rede:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
