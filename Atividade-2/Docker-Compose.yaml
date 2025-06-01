@@ -9,35 +9,36 @@ services:
       - ./dns/named.conf.local:/etc/bind/named.conf.local
       - ./dns/db.asa.br:/etc/bind/db.asa.br
     networks:
-      rede:
-        ipv4_address: 172.20.0.2
-
+      - rede-interna
+        
   proxy:
     build: ./proxy
     container_name: proxy-server
     ports:
+      - "80:80"
       - "443:443"
     networks:
-      rede:
-        ipv4_address: 172.20.0.10
+      - rede-externa
+      - rede-interna
+    depends_on:
+      - web1
+      - web2
 
   web1:
     build: ./web1
     container_name: web1
     networks:
-      rede:
-        ipv4_address: 172.20.0.11
+      - rede-interna  
 
   web2:
     build: ./web2
     container_name: web2
     networks:
-      rede:
-        ipv4_address: 172.20.0.12
+      - rede-interna
         
 networks:
-  rede:
+  rede-interna:
     driver: bridge
-    ipam:
-      config:
-        - subnet: 172.20.0.0/16
+  rede-externa:
+    external: true
+# docker network create <nome_da_network>
