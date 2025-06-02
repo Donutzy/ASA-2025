@@ -29,7 +29,6 @@ Este projeto implementa uma infraestrutura web completa utilizando Docker Compos
 └── web2/
     ├── Dockerfile
     └── index.html
-
 ```
 
 # 🛠️ Serviços Implementados
