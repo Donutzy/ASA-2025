@@ -41,7 +41,7 @@ Este projeto implementa uma infraestrutura web completa utilizando Docker Compos
   Portas: 53 (TCP/UDP)
   ```
 
-### Proxy (Nginx) 
+### Proxy Reverso (Nginx) 
   
   ```plaintext
   Portas: 80 (HTTP), 443 (HTTPS)
