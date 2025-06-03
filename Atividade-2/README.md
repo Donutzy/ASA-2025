@@ -74,7 +74,11 @@ Para que nosso navegar consiga resolver o nome dos nossos servidores web, precis
   vim /etc/resolv.conf 
   ```
 2. Altere o nameserver e coloque o ip do seu servidor DNS
-3. salve o arquivo e reinicie o serviço de rede utilizando:
+ ```plaintext
+  nameserver <ip do servidor DNS>
+  nameserver 8.8.8.8 #Servidor DNS reserva
+  ```
+4. salve o arquivo e reinicie o serviço de rede utilizando:
  ```plaintext
   /etc/init.d/networking restart 
   ```
