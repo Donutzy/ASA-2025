@@ -51,7 +51,32 @@ Este projeto implementa uma infraestrutura web completa utilizando Docker Compos
 
 ### Servidor Web
 
-  ```bash
+  ```plaintext
   2 Servidores Web com paginas personalizadas 
   ```
+
+# Como implementar
+
+1. Criar um rede externa para ser utilizada para acessar o container utilizando o comando:
+  ```bash
+  docker network create <nome_da_network>
+  ```
+No nosso caso, a rede "rede-externa" foi criada e utilizada pelo nosso proxy.
+
+## 2. Configuração de servidor DNS padrão
+Para que nosso navegar consiga resolver o nome dos nossos servidores web, precisamos alterar qual o servidor DNS padrão que o host está a utilizar. Esse processo varia de acordo com o sistema operacional, aqui estão algun deles:
+
+### Windows
+
+### Debian (Linux)
+1. Abra o terminal e utilize o comando para acessar o arquivo de configuração de resolução de nomes:
+ ```plaintext
+  vim /etc/resolv.conf 
+  ```
+2. Altere o nameserver e coloque o ip do seu servidor DNS
+3. salve o arquivo e reinicie o serviço de rede utilizando:
+ ```plaintext
+  /etc/init.d/networking restart 
+  ```
+
 
