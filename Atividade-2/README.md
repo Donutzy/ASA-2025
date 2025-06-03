@@ -70,16 +70,16 @@ Para que nosso navegar consiga resolver o nome dos nossos servidores web, precis
 
 ### Debian (Linux)
 1. Abra o terminal e utilize o comando para acessar o arquivo de configuração de resolução de nomes:
- ```plaintext
+ ```bash
   vim /etc/resolv.conf 
   ```
 2. Altere o nameserver e coloque o ip do seu servidor DNS
- ```plaintext
+ ```bash
   nameserver <ip do servidor DNS>
   nameserver 8.8.8.8 #Servidor DNS reserva
   ```
 4. salve o arquivo e reinicie o serviço de rede utilizando:
- ```plaintext
+ ```bash
   /etc/init.d/networking restart 
   ```
 
