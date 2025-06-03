@@ -57,7 +57,7 @@ Este projeto implementa uma infraestrutura web completa utilizando Docker Compos
 
 # Como implementar
 
-1. Criar um rede externa para ser utilizada para acessar o container utilizando o comando:
+## 1. Criar um rede externa para ser utilizada para acessar o container utilizando o comando:
   ```bash
   docker network create <nome_da_network>
   ```
